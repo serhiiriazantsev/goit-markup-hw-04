@@ -140,6 +140,7 @@ ul {
 
 .current {
   position: relative;
+  color: var(--pressed-state);
 }
 .current::after {
   content: "";
@@ -341,7 +342,7 @@ ul {
 .section-five-title {
   font-weight: 700;
   font-size: 36px;
-  line-height: 1, 11;
+  line-height: 1.11;
   text-align: center;
   letter-spacing: 0.02em;
   color: var(--dark);
@@ -355,19 +356,25 @@ ul {
   justify-content: center;
 }
 
+.company-list-item {
+  width: calc((100% - 120px) / 6);
+  height: 88px;
+}
+
 .company-link {
   display: flex;
   border: 1px solid;
-  border-color: var(--light-slate);
+  align-items: center;
+  justify-content: center;
   border-radius: 4px;
-  padding: 16px 32px;
+  color: var(--light-slate);
   width: 100%;
   height: 100%;
-  transition: border-color var(--trans-250);
+  transition: border-color var(--trans-250), color var(--trans-250);
 }
 .company-link:hover,
 .company-link:focus {
-  border-color: var(--pressed-state);
+  color: var(--pressed-state);
 }
 .company-link:hover .company-icons,
 .company-link:focus .company-icons {
@@ -375,7 +382,7 @@ ul {
 }
 
 .company-icons {
-  fill: var(--light-slate);
+  fill: currentColor;
   transition: fill var(--trans-250);
 }
 
@@ -389,12 +396,12 @@ ul {
 .footer-container {
   display: flex;
   align-items: baseline;
-  margin-right: 120px;
 }
 
 .footer-logo-text {
   display: flex;
   flex-direction: column;
+  margin-right: 120px;
 }
 
 .footer-logo.link {
@@ -488,7 +495,8 @@ ul {
   padding: 12px 24px;
   border: 1px solid var(--accent);
   border-radius: 4px;
-  transition: background-color var(--trans-250);
+  transition: color var(--trans-250), background-color var(--trans-250),
+    border-color var(--trans-250), box-shadow var(--trans-250);
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
 }
@@ -509,8 +517,7 @@ ul {
 }
 
 .portfolio-card {
-  transition: color var(--trans-250), background-color var(--trans-250),
-    border-color var(--trans-250), box-shadow var(--trans-250);
+  transition: box-shadow var(--trans-250);
 }
 .portfolio-card:hover,
 .portfolio-card:focus {
@@ -523,8 +530,9 @@ ul {
   position: relative;
   overflow: hidden;
 }
-.portfolio-cover-box:hover .portfolio-cover-text {
-  transform: translate(0);
+.portfolio-card:hover .portfolio-cover-text,
+.portfolio-card:focus .portfolio-cover-text {
+  transform: translateY(0%);
 }
 
 .portfolio-cover-text {
