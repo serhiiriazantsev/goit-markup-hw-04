@@ -121,6 +121,7 @@ ul {
   display: flex;
   align-items: center;
   gap: 40px;
+  color: #404bbf;
 }
 
 .menu.link {
@@ -140,7 +141,7 @@ ul {
 
 .current {
   position: relative;
-  color: var(--pressed-state);
+  color: #404bbf;
 }
 .current::after {
   content: "";
